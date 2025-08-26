@@ -1,0 +1,58 @@
+body{
+
+font-family: arial,sans-serif;
+
+
+}
+
+.card-container {
+	/*max-width: 1000px;*/
+	margin: auto;
+	
+	
+}
+.card{
+	
+
+
+	width: 300px;
+	margin: 15px;
+	background-color: white;
+	border: 2px solid blue;
+	border-radius: 15px;
+	padding: 10px;
+	text-align: center;
+
+}
+
+
+.card img{
+	width:275px;
+	border-radius: 20px;
+}
+
+.card h2,p{
+        
+        font-weight: bold;
+}
+
+
+.card button{
+
+	background-color: black;
+	color: white;
+
+	border: 2px solid seagreen;
+	padding: 10px;
+	border-radius: 10px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 2s ease, transform 1s ease;
+
+}
+
+
+.card button:hover{
+	background-color: darkblue;
+	transform: scale(1.07);
+}

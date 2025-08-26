@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(to right, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .header-content {
+            max-width: 700px;
+            width: 100%;
+        }
+        
+        .header h1 {
+            font-size: 2.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .header p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85%;
+            height: 4px;
+            background: linear-gradient(to right, #ff8a00, #da1b60);
+            border-radius: 2px;
+        }
+        
+        .form-container {
+            padding: 35px 40px;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            grid-column: 1 / -1;
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin: 15px 0 5px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eaeaea;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .form-group {
+            position: relative;
+            animation: fadeIn 0.6s ease-out;
+            animation-fill-mode: backwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .form-group:nth-child(1) { animation-delay: 0.1s; }
+        .form-group:nth-child(2) { animation-delay: 0.2s; }
+        .form-group:nth-child(3) { animation-delay: 0.3s; }
+        .form-group:nth-child(4) { animation-delay: 0.4s; }
+        .form-group:nth-child(5) { animation-delay: 0.5s; }
+        .form-group:nth-child(6) { animation-delay: 0.6s; }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.08rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .form-group label i {
+            width: 24px;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #4a6491;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 16px 20px 16px 50px;
+            border: 2px solid #e1e5eb;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            background-color: #f8fafc;
+            color: #333;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #4b6cb7;
+            box-shadow: 0 0 0 4px rgba(75, 108, 183, 0.15), inset 0 2px 5px rgba(0,0,0,0.05);
+            background-color: #fff;
+        }
+        
+        .form-group i.inside-icon {
+            position: absolute;
+            left: 18px;
+            bottom: 18px;
+            color: #7b8793;
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+        
+        .form-group input:focus ~ i.inside-icon {
+            color: #4b6cb7;
+        }
+        
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.35);
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .submit-btn::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20px;
+            height: 200%;
+            background: rgba(255,255,255,0.3);
+            transform: rotate(30deg);
+            transition: all 0.6s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.5);
+        }
+        
+        .submit-btn:hover::after {
+            left: 120%;
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        .submit-btn i {
+            margin-right: 12px;
+            transition: transform 0.3s ease;
+        }
+        
+        .submit-btn:hover i {
+            transform: translateX(5px);
+        }
+        
+        .validation-message {
+            height: 22px;
+            font-size: 0.9rem;
+            color: #e74c3c;
+            margin-top: 6px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding-left: 5px;
+        }
+        
+        .form-group.error input, .form-group.error select {
+            border-color: #e74c3c;
+            animation: shake 0.5s ease;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        
+        .form-group.error .validation-message {
+            opacity: 1;
+        }
+        
+        .form-group.success input {
+            border-color: #27ae60;
+        }
+        
+        .department-icon {
+            color: #4b6cb7;
+        }
+        
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .form-container {
+                padding: 25px;
+            }
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 22px;
+            color: #7b8793;
+            font-size: 0.92rem;
+            border-top: 1px solid #e1e5eb;
+            background: #f9fbfd;
+        }
+        
+        .required::after {
+            content: " *";
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-user-tie"></i> Employee Information Form</h1>
+                <p>Please provide accurate details for our records. All fields marked with an asterisk (*) are required.</p>
+            </div>
+        </div>
+        
+        <div class="form-container">
+            <form id="employeeForm">
+                <div class="form-grid">
+                    <h3 class="section-title"><i class="fas fa-id-card"></i> Personal Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="employeeName"><i class="fas fa-signature"></i> Employee Name<span class="required"></span></label>
+                        <i class="fas fa-user inside-icon"></i>
+                        <input type="text" id="employeeName" placeholder="Enter full name">
+                        <div class="validation-message" id="nameError">Please enter a valid name (min 3 characters)</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="department"><i class="fas fa-sitemap"></i> Department Name<span class="required"></span></label>
+                        <i class="fas fa-building inside-icon department-icon"></i>
+                        <select id="department">
+                            <option value="">Select Department</option>
+                            <option value="hr">Human Resources</option>
+                            <option value="it">Information Technology</option>
+                            <option value="finance">Finance</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="sales">Sales</option>
+                            <option value="operations">Operations</option>
+                            <option value="rd">Research & Development</option>
+                            <option value="support">Customer Support</option>
+                            <option value="legal">Legal</option>
+                        </select>
+                        <div class="validation-message" id="deptError">Please select a department</div>
+                    </div>
+                    
+                    <h3 class="section-title"><i class="fas fa-briefcase"></i> Position Details</h3>
+                    
+                    <div class="form-group">
+                        <label for="role"><i class="fas fa-user-tag"></i> Role/Position<span class="required"></span></label>
+                        <i class="fas fa-briefcase inside-icon"></i>
+                        <input type="text" id="role" placeholder="Enter job title">
+                        <div class="validation-message" id="roleError">Please enter a valid role</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="manager"><i class="fas fa-users"></i> Reporting Manager<span class="required"></span></label>
+                        <i class="fas fa-user-friends inside-icon"></i>
+                        <input type="text" id="manager" placeholder="Manager's full name">
+                        <div class="validation-message" id="managerError">Please enter manager's name</div>
+                    </div>
+                    
+                    <h3 class="section-title"><i class="fas fa-address-book"></i> Contact Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-at"></i> Email ID<span class="required"></span></label>
+                        <i class="fas fa-envelope inside-icon"></i>
+                        <input type="email" id="email" placeholder="Enter company email">
+                        <div class="validation-message" id="emailError">Please enter a valid email address</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mobile"><i class="fas fa-mobile-alt"></i> Mobile Number<span class="required"></span></label>
+                        <i class="fas fa-phone-alt inside-icon"></i>
+                        <input type="tel" id="mobile" placeholder="Enter 10-digit number">
+                        <div class="validation-message" id="mobileError">Please enter a valid 10-digit number</div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Submit Employee Data</button>
+            </form>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2023 Company Name. All employee data is kept confidential. <i class="fas fa-lock"></i></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('employeeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Reset previous errors
+            resetValidation();
+            
+            // Validate form fields
+            let isValid = true;
+            
+            // Name validation
+            const name = document.getElementById('employeeName').value.trim();
+            if (!name || name.length < 3) {
+                showError('employeeName', 'nameError');
+                isValid = false;
+            }
+            
+            // Department validation
+            const department = document.getElementById('department').value;
+            if (!department) {
+                showError('department', 'deptError');
+                isValid = false;
+            }
+            
+            // Role validation
+            const role = document.getElementById('role').value.trim();
+            if (!role) {
+                showError('role', 'roleError');
+                isValid = false;
+            }
+            
+            // Manager validation
+            const manager = document.getElementById('manager').value.trim();
+            if (!manager) {
+                showError('manager', 'managerError');
+                isValid = false;
+            }
+            
+            // Email validation
+            const email = document.getElementById('email').value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showError('email', 'emailError');
+                isValid = false;
+            }
+            
+            // Mobile validation
+            const mobile = document.getElementById('mobile').value.trim();
+            const mobileRegex = /^\d{10}$/;
+            if (!mobileRegex.test(mobile)) {
+                showError('mobile', 'mobileError');
+                isValid = false;
+            }
+            
+            // If all valid, show success
+            if (isValid) {
+                // Create a nice success message
+                const successHTML = `
+                    <div style="text-align: center; padding: 30px;">
+                        <div style="font-size: 5rem; color: #27ae60; margin-bottom: 20px;">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h2 style="color: #2c3e50; margin-bottom: 15px;">Employee Record Created!</h2>
+                        <p style="font-size: 1.2rem; color: #555; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                            The employee information has been successfully recorded in our system.
+                        </p>
+                        <button id="newEmployeeBtn" style="
+                            background: linear-gradient(to right, #3498db, #2c3e50);
+                            color: white;
+                            border: none;
+                            padding: 14px 35px;
+                            font-size: 1.1rem;
+                            border-radius: 50px;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.35);
+                        ">
+                            <i class="fas fa-user-plus"></i> Add Another Employee
+                        </button>
+                    </div>
+                `;
+                
+                // Replace form with success message
+                document.querySelector('.form-container').innerHTML = successHTML;
+                
+                // Add event listener to the new button
+                document.getElementById('newEmployeeBtn').addEventListener('click', function() {
+                    location.reload();
+                });
+            }
+        });
+        
+        function showError(inputId, errorId) {
+            const input = document.getElementById(inputId);
+            const error = document.getElementById(errorId);
+            
+            input.parentElement.classList.add('error');
+            error.style.opacity = '1';
+        }
+        
+        function resetValidation() {
+            const formGroups = document.querySelectorAll('.form-group');
+            formGroups.forEach(group => {
+                group.classList.remove('error');
+            });
+            
+            const errorMessages = document.querySelectorAll('.validation-message');
+            errorMessages.forEach(msg => {
+                msg.style.opacity = '0';
+            });
+        }
+        
+        // Add real-time validation for mobile field
+        document.getElementById('mobile').addEventListener('input', function() {
+            const mobileRegex = /^\d{0,10}$/;
+            if (!mobileRegex.test(this.value)) {
+                this.value = this.value.slice(0, -1);
+            }
+            
+            if (this.value.length === 10) {
+                this.parentElement.classList.remove('error');
+                document.getElementById('mobileError').style.opacity = '0';
+            }
+        });
+        
+        // Add real-time validation for email field
+        document.getElementById('email').addEventListener('blur', function() {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (this.value && !emailRegex.test(this.value)) {
+                showError('email', 'emailError');
+            } else if (this.value) {
+                this.parentElement.classList.remove('error');
+                document.getElementById('emailError').style.opacity = '0';
+            }
+        });
+        
+        // Add real-time validation for name field
+        document.getElementById('employeeName').addEventListener('input', function() {
+            if (this.value.trim().length >= 3) {
+                this.parentElement.classList.remove('error');
+                document.getElementById('nameError').style.opacity = '0';
+            }
+        });
+    </script>
+</body>
+</html>

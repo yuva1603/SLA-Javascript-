@@ -1,0 +1,23 @@
+title{
+    text-decoration-style: double;
+}
+h1{
+    color: chartreuse;
+}
+table{
+    letter-spacing: 1.5cm;
+    color: red;
+    background-color: black;
+    
+    transform:scale3d(2)
+}
+    
+
+.ED{
+    text-decoration: none;
+    position: relative;
+    border-top-left-radius: 50%;
+    grid-auto-columns: max-content;
+    size: 14%x;
+}
+

@@ -1,0 +1,21 @@
+16-07-25
+CSS CLass 3:
+
+Box- moduels :
+
+
+grid System / Flex :
+
+
+1.what is css grid ?
+	CSS grid is a 2 dimensional layout that helps you create Layout in both rows and columns
+
+2. most important grid properties ?
+
+	p1 - display : grid;  [allow in parrent][split data in grid types]
+	p2 - grid-template-rows: ;  [allow in parrent][split data in row grid types]
+	p3 - grid-template-columns: ;   [allow in parrent][split data in column grid types]
+	p4 - grid: gap ;
+	p5 - gap:
+	p6 - justify-items : ;
+	p7 - align-items : ;

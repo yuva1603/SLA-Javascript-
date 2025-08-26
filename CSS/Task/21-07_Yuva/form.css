@@ -1,0 +1,44 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+.form_container{
+    background-color: deepskyblue;
+    width: max-content;
+    padding: 30px;
+    margin: 40px;
+    margin-top: 40px;
+}
+form{
+    background-color:#5F68C3;
+    margin: auto;
+    padding: 20px;              
+    border-radius: 20px;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+}
+.form_group{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 20px;
+}
+form input{
+    border-radius: 20px;
+    border: none;
+    background: none;
+    outline: none;
+    border-bottom: 2px solid white;
+    color: antiquewhite
+}
+.fa-solid{
+    padding: 10px;
+    color: cyan;
+    display: flex;
+    justify-content: center;
+}
+body{
+    background-image: url(images/body-bck.jpg);
+}

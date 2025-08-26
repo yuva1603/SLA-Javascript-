@@ -1,0 +1,14 @@
+
+
+.body{
+    background-color: aqua;
+    margin: 15%;
+    align-items: center;
+}
+
+div{
+    padding: 20%;
+    margin:auto;
+    border-radius: 20%;
+    
+}

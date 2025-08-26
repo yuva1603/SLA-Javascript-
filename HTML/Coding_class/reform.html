@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form - Table </title>
+</head>
+
+<body>
+    <center>
+    <header>
+        <nav>
+            <a href="">Form</a> | <a href="">formtable</a>
+        </nav>
+    </header>
+    </center>
+
+    <center>
+    <form>
+        <h2>Register Form</h2>
+        <table>
+            <tr>
+                <td><label>User name</label></td>
+                <td><input type="text"></td>
+            </tr>
+
+            <tr>
+                <td><label>Mobile</label></td>
+                <td><input type="number"></td>
+            </tr>
+
+            <tr>
+                <td><label>Course</label></td>
+                <td>
+                    <select required> <!--disabled attribute - use to disable the options-->
+                          <option value="" selected disabled>Select a Course</option>
+                          <option value="1">HTML</option>
+                          <option value="2">CSS</option>
+                          <option value="3">JS</option>
+                          <option value="4">REACT</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Course Platform</label></td>
+                <td>
+                    <select required> <!--disabled attribute - use to disable the options-->
+                          <option value="" selected disabled>Select a Course</option>
+                          
+                          <optgroup label="Frontend">
+                          <option value="1">HTML</option>
+                          <option value="2">CSS</option>
+                          </optgroup>
+
+                          <optgroup label="Frontend">
+                          <option value="1">JAVA</option>
+                          <option value="2">NODE</option>
+                          </optgroup>
+                          s
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Upload Your Image</label></td>
+                <td><input type="file"></td>
+            </tr>
+
+            <tr>
+                <td><label>Gender</label></td>
+                <td>
+                    <fieldset>
+                        <legend>Choose one</legend>
+                        Male<input type="radio" name="gender">
+                        Female<input type="radio" name="gender">
+                    </fieldset>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Email</label></td>
+                <td><input type="email"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input type="datetime-local"></td>
+            </tr>
+            <tr>
+                <td><label>Password</label></td>
+                <td><input type="password"></td>
+            </tr>
+
+            <tr>
+                <td></td>    
+                <td><textarea></textarea></td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td><input type="submit"></td>
+            </tr>
+        </table>
+    </form>
+    </center>
+
+
+</body>
+
+</html>
