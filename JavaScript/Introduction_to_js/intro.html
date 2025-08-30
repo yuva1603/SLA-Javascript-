@@ -1,57 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Intro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Introduction</title>
+  
+  <!-- ✅ Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-light text-dark">
 
-    <h1>What is js</h1>
+  <div class="container py-5">
 
+    <!-- HEADER -->
+    <div class="text-center mb-4">
+      <h1 class="fw-bold text-primary">Introduction to JavaScript (JS)</h1>
+      <p class="lead">Basics for Beginners & Interview Preparation</p>
+    </div>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus,
-         veritatis omnis nesciunt iste possimus ratione provident id? Natus ab
-          nostrum ex temporibus, quidem voluptatum eius laboriosam voluptatibus
-           delectus saepe expedita.</p>
+    <!-- PLANS -->
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header bg-secondary text-white fw-bold">Learning Plans</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">1. Plans - A, B, C</li>
+        <li class="list-group-item">2. Minimum 3 to 5 line code principle formula</li>
+        <li class="list-group-item">3. Task submission</li>
+        <li class="list-group-item">4. GIT process & LinkedIn usage</li>
+        <li class="list-group-item">5. Self Learning</li>
+        <li class="list-group-item">6. Continue learning with one goal</li>
+        <li class="list-group-item">7. Understand: What you want? What you do?</li>
+      </ul>
+    </div>
 
+    <!-- WHAT IS JS -->
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header bg-primary text-white fw-bold">What is JavaScript?</div>
+      <div class="card-body">
+        <p>✔ JavaScript (JS) is a high-level programming language:</p>
+        <ul>
+          <li>Runs inside web browsers, enabling interactivity.</li>
+          <li>Allows features like form validation, animations, and content updates without reloading.</li>
+          <li>Can also run outside browsers with environments like <b>Node.js</b>.</li>
+          <li>Runs inside browser engines like Chrome’s <b>V8 Engine</b>.</li>
+          <li>Can be added:
+            <ul>
+              <li><code>&lt;script&gt;</code> inline</li>
+              <li>External file via <code>&lt;script src="file.js"&gt;&lt;/script&gt;</code></li>
+            </ul>
+          </li>
+        </ul>
+        <p><b>Best Practice:</b> Place scripts before <code>&lt;/body&gt;</code> for performance.</p>
+      </div>
+    </div>
 
+    <!-- TYPES OF JS -->
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header bg-success text-white fw-bold">Types of Work with JS</div>
+      <div class="card-body">
+        <ul>
+          <li>Mathematical Calculations</li>
+          <li>Pattern Calculations</li>
+          <li>Data Handling (approx. 15% focus in Interviews)</li>
+        </ul>
+      </div>
+    </div>
 
+    <!-- VARIABLES & DATATYPES -->
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header bg-warning text-dark fw-bold">Key JS Concepts</div>
+      <div class="card-body">
+        <p>⚡ Variables: <code>var</code>, <code>let</code>, <code>const</code></p>
+        <p>⚡ Data types: Primitive (String, Number, Boolean, null, undefined, Symbol, BigInt) & Non-Primitive (Objects, Arrays, Functions)</p>
+        <p>⚡ Operators: +, -, *, /, %, <, >, &&, || ...</p>
+      </div>
+    </div>
 
+    <!-- CODE EXAMPLES -->
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header bg-dark text-white fw-bold">Example Code</div>
+      <div class="card-body bg-light">
+        <pre class="bg-dark text-light p-3 rounded"><code>
+// Declaration
+var a;
+let b;
+const c;
 
+// Naming Conventions
+// camelCase -  let goalIsOne;
+// PascalCase - let GoalIsOne;
+// snake_case - const goal_is_one;
+// kebab-case - (only for CSS classes)
+        </code></pre>
+      </div>
+    </div>
 
+  </div>
 
+  <!-- ✅ Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- External JS -->
+  <!-- <script src="JS/intro.js"></script> -->
+  
+  <script src="JS/28-08-declare-function.js"></script>
 
-           
-
-    <Script src="JS/intro.js"></Script>
-
-    <script>
-
-
-        // declaration 
-        var a;
-        let b;
-        const c;
-    
-
-        // Console.log();
-
-
-
-
-
-        // camel case
-        // var goalIsOne 
-
-        // Upper camel cas - Pascal case
-        // let goalIsOne
-
-        // Snake case
-        // const goal_is_one
-
-        // Kebab case
-        // var goal-is-one -JS not use Kebab case (it is only for css class name)
-    </script>
 </body>
 </html>
