@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+
+<body>
+    <h1>Array methods</h1>
+
+    <script>
+
+    const add = (a=1,b=2)=>{
+
+        //  a = 1, b =2 is 
+        // [a,b is parameter][1,2 is a default argument]
+
+        console.log(a+b);
+
+    }
+
+    add(20,30) 
+
+          //             B A S I C S       A R R A Y       M E T H O D S
+    a = [1,2,3,4,5,6];
+    b = ["bala"];
+    console.log(a);
+    
+    a.pop()
+    // POP :  REMOVE LAST ELEMENT OF ARRAY AND RETURN IT
+    console.log(a);
+
+    a.push(11,12,13)
+    // PUSH :   ADD VALUE AT THE LAST 
+    console.log(a);
+
+    a.unshift(0)
+    // UNSHIFT : ADD VALUE TO THE BEGINING OF ARRAY
+    console.log(a);
+
+    a.shift()
+    // SHIFT : REMOVE FIRST VALUE OF ARRAY
+    console.log(a);
+
+    a.splice(4,1,78,90)
+    // SPLICE (START NUMBER, DELETE COUNT): WE CAN REMOVE ADD ELEMENTS IN RANGE 
+    console.log(a);
+
+    // SLICE : FOR SLICE NEED TO DECLARE VARIABLE
+    const sliced = a.slice(4,9)
+    //  START RANGE AND CLOSE RANGE AND SELECTED VALUE WILL BE DISPLAYED
+    console.log(sliced);
+    
+
+    //  CONCAT - ADDS 2 ARRAY TO A SINGLE ARRAY
+    
+    c=a.concat(b)
+
+    console.log(c);
+
+
+
+    
+  //             H I G H E R    O R D E R      A R R A Y       M E T H O D S
+
+
+
+
+  d=[1,2,3,4,5]
+
+  d.forEach((e,i) => {
+
+    //  FOREACH - EXECUTE A FUNCTION ONCE TO A EVERY ELEMENT OF ARRAY
+
+    console.log(e,i);
+    
+    });
+
+
+
+    // MAP - EXECUTE A FUNCTION AND CREATE A SEPARATE ARRAY VALUE
+
+    // arr = [2,3,4,5]
+
+    // let double = arr.map((e,i)=>e*2)
+
+    // console.log(double);
+
+
+
+    //  F I L T E R       A R R A Y M E T H O D S
+    
+    const arr = [1,2,3,4,5,6];
+
+
+    const arrnew = arr.filter(e=>e>2)
+    // FILTER : 
+    console.log(arrnew);
+    
+    //  FIND 
+    const arrold = arr.find(e=>e>2)
+    console.log(arrold);
+
+    const arrld = arr.find((e,i)=> i>2)
+    console.log(arrld);
+    
+    // REDUCE 
+    //  syntax : array.reduce((accumulator,elemet,i,array)=>{return newAcc;},init-value)
+
+    let ara = [1,2,3,4,5]
+
+    let sum = ara.reduce((acc,num)=>acc+num,0)
+
+    console.log(sum);
+    
+    
+    </script>
+</body>
+</html>

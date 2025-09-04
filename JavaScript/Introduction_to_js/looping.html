@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>Looping</p>
+
+
+    <script>
+        //                              While loop
+
+        
+        // while(condition){
+
+
+        //       }
+
+
+
+        // E X A M P L E 1
+
+        // let i = 1;
+        // while(i <= 5){
+
+
+        //     console.log(i);
+        //     i++;
+        //     // i+1
+
+        // }
+
+        // E X A M P L E 2 
+
+        let sum = 0;
+        let num = 1;
+        while(sum <= 10){
+
+            // While use in a looping for result
+
+            sum+=num;
+            // sum = sum + num = 1
+            num++
+        }
+
+        console.log('While loop',sum);
+
+
+        //                               FOR LOOP
+
+        //  E X A M P L E 3
+
+        sum = 0;
+        for(let i=1; i<=5; i++){
+
+
+            sum += i;
+            // sum = sum + 1
+            // 10 + 5 = 15
+
+
+            console.log(i);
+            
+
+        }
+        console.log('This is Process',sum);
+        // let i = 10;
+        
+        
+        // Task 1 : program to check leap year
+    function checkLeapYear(year) {
+
+    //three conditions to find out the leap year
+        if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
+            console.log(year + ' is a leap year');
+        } else {
+            console.log(year + ' is not a leap year');
+        }
+    }
+
+        // take input
+        const year = prompt('Enter a year:');
+
+        checkLeapYear(year);
+
+
+        
+        // Task 2 : Check the Factorial 
+        function fact(n){
+            let res = 1;
+            for(i=1;i<=n;i++){
+                res *= i;
+            }
+            return res;
+        }
+
+        const n = prompt('Enter a number :')
+        fact(n);
+
+    </script>
+</body>
+</html>

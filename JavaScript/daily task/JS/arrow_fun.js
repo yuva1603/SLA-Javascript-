@@ -8,7 +8,7 @@
     console.log("Multiply:", f3(4, 9));
 
     let f4 = name => "Hi " + name;
-    console.log(f4("Saravanan"));
+    console.log(f4("Yuvaraj"));
 
     let f5 = x => x * x;
     console.log("Square:", f5(6));
@@ -20,7 +20,7 @@
     console.log(f7("arrow"));
 
     let f8 = str => str.split("").reverse().join("");
-    console.log(f8("mapla"));
+    console.log(f8("mukund"));
 
     let f9 = (p, r, t) => (p * r * t) / 100;
     console.log("SI:", f9(2000, 5, 3));
